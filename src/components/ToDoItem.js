@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Checkbox } from 'react-bootstrap';
 
 export default class ToDoItem extends Component {
 
@@ -21,8 +22,9 @@ export default class ToDoItem extends Component {
     render() {
         return (
             <div>
-                <input type='checkbox' value={this.state.isDone} onChange={this.updateStatus} />
-                <label>{ this.renderItem() }</label>
+                <Checkbox inline checked={this.state.isDone} onChange={this.updateStatus}>
+                    { this.renderItem() }
+                </Checkbox>
             </div>
         );
     }

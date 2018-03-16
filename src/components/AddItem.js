@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Form, FormGroup, InputGroup, ControlLabel, FormControl, Button, Col } from 'react-bootstrap';
 
 export default class AddItem extends Component {
 
@@ -11,8 +12,10 @@ export default class AddItem extends Component {
     };
 
     addItemToList = () => {
-        this.props.onAdd(this.state.currItem);
-        this.clearInput();
+        if (this.state.currItem.length !== 0) {
+            this.props.onAdd(this.state.currItem);
+            this.clearInput();
+        }
     };
 
     clearInput = () => {
@@ -21,12 +24,21 @@ export default class AddItem extends Component {
 
     render() {
         return (
-            <div>
-                <input type='text'
-                    value={this.state.currItem}
-                    onChange={this.changeItem} />
-                <input type='button' defaultValue='+' onClick={this.addItemToList} />
-            </div>
+            <form>
+                <FormGroup
+                    controlId='formBasicText'>
+                    <InputGroup>
+                        <FormControl
+                            type='text'
+                            value={this.state.currItem}
+                            placeholder='Enter Item'
+                            onChange={this.changeItem} />
+                        <InputGroup.Button>
+                            <Button bsStyle='primary' onClick={this.addItemToList}> + </Button>
+                        </InputGroup.Button>
+                    </InputGroup>
+                </FormGroup>
+            </form>
         );
     }
 }

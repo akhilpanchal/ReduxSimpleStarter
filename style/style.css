@@ -1,0 +1,25 @@
+
+.grid {
+    margin-top: 50px;
+}
+
+.appTitle {
+    font-size: 3em;
+    font-style: bold;
+    text-align: center;
+}
+.vOffset5 {
+    margin-top: 5px;
+}
+
+.vOffset10 {
+    margin-top: 10px;
+}
+
+.vOffset15 {
+    margin-top: 15px;
+}
+
+.vOffset30 {
+    margin-top: 30px;
+}

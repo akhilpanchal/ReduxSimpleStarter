@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import ToDoList from './ToDoList.js'
-import AddItem from './AddItem.js'
+import ToDoList from './ToDoList.js';
+import AddItem from './AddItem.js';
+import { Grid, Row, Col } from 'react-bootstrap';
 
 export default class ToDoApp extends Component {
 
@@ -17,10 +18,17 @@ export default class ToDoApp extends Component {
 
     render() {
         return (
-            <div>
-                <AddItem onAdd={this.addItemToList} />
-                <ToDoList items={this.state.items} />
-            </div>
+            <Grid className='grid'>
+                <Row className='appTitle'>
+                    List It Up!
+                </Row>
+                <Row>
+                    <AddItem onAdd={this.addItemToList} />
+                </Row>
+                <Row>
+                    <ToDoList items={this.state.items} />
+                </Row>
+            </Grid>
         );
     }
 }

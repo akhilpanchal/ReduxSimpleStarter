@@ -23,3 +23,10 @@ Click [here](https://github.com/StephenGrider/ReactStarter/releases) then downlo
 > npm install
 > npm start
 ```
+
+
+
+# TODO
+- Add ESLint.
+- Add validation checks.
+- Use Redux.

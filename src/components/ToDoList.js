@@ -1,20 +1,23 @@
 import React, { Component } from 'react';
 import ToDoItem from './ToDoItem.js'
+import { ListGroup, ListGroupItem } from 'react-bootstrap';
 
 export default class ToDoList extends Component {
-    renderItem = (item) => {
-        console.log('item: ', item);
-        return (<ToDoItem name={item} />);
-    };
 
-    getItems = () => {
-        return this.props.items.map((item, key) => <ToDoItem key={key} name={item} />);
+    renderItems = () => {
+        return this.props.items.map((item, key) => 
+            <ListGroupItem key={key}>
+                <ToDoItem name={item} />
+            </ListGroupItem>
+        );
     };
 
     render() {
         return (
-            <div>
-                { this.getItems() }
+            <div className='vOffset15'>
+                <ListGroup>
+                    { this.renderItems() }
+                </ListGroup>
             </div>
         );
     }
